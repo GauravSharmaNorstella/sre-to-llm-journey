@@ -1,33 +1,35 @@
-# 3-Month LLM Learning Plan
 
-This repository contains a structured 3-month learning plan for mastering Large Language Models (LLMs), tailored for SRE/DevOps engineers transitioning into AI.
+# sre-to-llm-journey – Starter Kit
 
-## 📅 Roadmap
+This ZIP contains a ready-to-drop **starter kit** for your 3‑month LLM plan. Unzip into the **root** of your repo and commit.
 
-### Month 1: Foundations
-- Week 1: Python for Data Science
-- Week 2: Machine Learning Basics
-- Week 3: Neural Networks & Deep Learning
-- Week 4: Transformers Introduction
+## What you get
+- Structured folders for each week
+- Starter code: preprocessing, HF pipelines, tokenization, fine‑tuning, and a Flask API
+- Dockerfile + docker-compose for local deploy (with optional Redis cache)
+- GitHub Actions CI to run tests and build the Docker image
 
-### Month 2: LLMs in Action
-- Week 5: Hugging Face Transformers
-- Week 6: Tokenization & Embeddings
-- Week 7: Prompt Engineering
-- Week 8: Fine-Tuning Models
+## Quick start
+```bash
+# 1) (optional) Create and activate a virtual env
+python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-### Month 3: Deployment & Projects
-- Week 9: MLOps vs LLMOps
-- Week 10: Model Deployment
-- Week 11: Mini Project
-- Week 12: Optimization & Documentation
+# 2) Install dependencies
+pip install -r requirements.txt
 
-## 🛠️ Tools
-- Python
-- PyTorch
-- Hugging Face Transformers
-- Docker
-- AWS SageMaker / ECS
+# 3) Try the basic pipeline
+python month_2/week_5/hf_pipelines.py
 
-## 📂 Structure
-Each week folder contains starter code templates and exercises.
+# 4) Run the API locally
+docker compose up --build
+# -> POST http://localhost:5000/predict {"text":"LLMs are amazing for SRE."}
+```
+
+## Suggested workflow
+1. Copy all files into your repo root
+2. Commit and push on a new branch, e.g. `setup/starter-kit`
+3. Open a PR to track changes
+4. Iterate weekly by filling each week folder
+
+---
+**Security note:** Never commit secrets. Use `.env` (not in git) or GitHub Actions Secrets.

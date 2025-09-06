@@ -1,8 +1,17 @@
-transformers
+
+# Core
+transformers>=4.44
 torch
+datasets
 scikit-learn
 pandas
 numpy
 matplotlib
-jupyter
-docker
+
+# API & deployment
+flask
+redis
+uvicorn
+
+# Quality
+pytest
